@@ -3,8 +3,8 @@ from twilio.rest import Client
 
 open_weather_endpoint = "https://api.openweathermap.org/data/2.8/onecall"
 api_key = "5269c17b1ac2399afab64422d37d2e39"
-account_sid = "AC0e3d9ddc66af5411934c7b3f8d46b7c0"
-auth_token = "bfa47fbf2792bec8a6a1fcc943d1e725"
+account_sid = "TWILIO ACCOUNT ID"
+auth_token = "TWILIO AUTH_TOKEN"
 
 parameters = {
     "lat": 30.316496,
@@ -27,9 +27,10 @@ for hourly_data in weather_slice:
 if rain:
     client = Client(account_sid, auth_token)
     message = client.messages \
-        .create(
-        body="It's going to rain today. Remember to bring an ☔️",
-        from_="+13204131570",
-        to="Your number with country code"
-    )
+                    .create(
+                    body="It's going to rain today.Remember to bring an ☔️",
+                    from_="YOUR TEMPORARY TWILIO NUMBER",
+                    to="YOUR NUMBER WITH COUNTRY CODE"
+                )
     print(message.status)
+
